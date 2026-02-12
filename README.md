@@ -10,7 +10,21 @@ Spectral graph-based collaborative filtering (CF) models have recently gained at
 
 This work presents a systematic and fully reproducible reassessment of three major families of spectral recommenders:
 
-FARE TABELLA
+Ecco la tabella riassuntiva dei modelli analizzati nel tuo studio di riproducibilità, divisi per famiglia come nel paper, con i relativi titoli e DOI.
+
+| Famiglia | Modello | Titolo del Paper | DOI / Link |
+| :--- | :--- | :--- | :--- |
+| **Spectral Denoising** | **SVD-GCN** / **SVD-GCN-S** | SVD-GCN: A Simplified Graph Convolution Paradigm for Recommendation | [10.1145/3511808.3557252](https://doi.org/10.1145/3511808.3557252) |
+| | **GDE** | Less is More: Reweighting Important Spectral Graph Features for Recommendation | [10.1145/3477495.3532046](https://doi.org/10.1145/3477495.3532046) |
+| | **SGDE** / **RSGDE** / **CSGDE** | Less is More: Removing Redundancy of Graph Convolutional Networks for Recommendation | [10.1145/3632751](https://doi.org/10.1145/3632751) |
+| | **SGFCF** | How Powerful is Graph Filtering for Recommendation | [10.1145/3637528.3671913](https://doi.org/10.1145/3637528.3671913) |
+| **Graph Signal Processing (GSP)** | **PGSP** | Personalized Graph Signal Processing for Collaborative Filtering | [10.1145/3543507.3583466](https://doi.org/10.1145/3543507.3583466) |
+| | **FaGSP** | Frequency-aware Graph Signal Processing for Collaborative Filtering | [10.1145/3701716.3715485](https://doi.org/10.1145/3701716.3715485) |
+| | **HiGSP** | Hierarchical Graph Signal Processing for Collaborative Filtering | [10.1145/3589334.3645368](https://doi.org/10.1145/3589334.3645368) |
+| **Spectral Propagation** | **GF-CF** | How Powerful is Graph Convolution for Recommendation? | [10.1145/3459637.3482387](https://doi.org/10.1145/3459637.3482387) |
+| | **BSPM** | Blurring-Sharpening Process Models for Collaborative Filtering | [10.1145/3539618.3591748](https://doi.org/10.1145/3539618.3591748) |
+| | **TurboCF** | Turbo-CF: Matrix Decomposition-Free Graph Filtering for Fast Recommendation | [10.1145/3626772.3657723](https://doi.org/10.1145/3626772.3657723) |
+| | **ChebyCF** | Graph Spectral Filtering with Chebyshev Interpolation for Recommendation | *[10.48550/arXiv.2505.00552](https://doi.org/10.48550/arXiv.2505.00552) (In press / SIGIR '25)* |
 
 ### Our Challenges
 
