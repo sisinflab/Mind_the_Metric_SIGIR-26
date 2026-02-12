@@ -1,0 +1,31 @@
+experiment:
+
+  backend: pytorch
+
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/train_sgfcf.tsv
+    test_path: ../data/{0}/test_sgfcf.tsv
+
+  dataset: gowalla
+  top_k: 20
+  evaluation:
+    cutoffs: [10,20]
+    simple_metrics: [nDCG, Recall]
+
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+
+  models:
+    external.SGFCF:
+      meta:
+        save_recs: False
+        verbose: False
+      batch_eval: 512
+      factors: 650
+      alpha: 0
+      beta_1: 0.3
+      beta_2: 2.5
+      gamma: 1.6
+      eps: 0.34
+      seed: 42

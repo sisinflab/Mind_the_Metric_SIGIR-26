@@ -1,0 +1,25 @@
+experiment:
+
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/train_gfcf.tsv
+    test_path: ../data/{0}/test_gfcf.tsv
+
+  dataset: gowalla
+  top_k: 20
+  evaluation:
+    cutoffs: 20
+    simple_metrics: [Recall, nDCG]
+
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+
+  models:
+    external.PGSP:
+      meta:
+        verbose: False
+      factors: 512
+      phi: 0.7
+      P0_: True
+      P1_: True
+      seed: 42

@@ -1,0 +1,31 @@
+experiment:
+
+  backend: pytorch
+
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/train_sgfcf.tsv
+    test_path: ../data/{0}/test_sgfcf.tsv
+
+  dataset: pinterest
+  top_k: 20
+  evaluation:
+    cutoffs: [10,20]
+    simple_metrics: [nDCG, Recall]
+
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+
+  models:
+    external.SGFCF:
+      meta:
+        save_recs: False
+        verbose: False
+      batch_eval: 512
+      factors: 300
+      alpha: 10
+      beta_1: 0.9
+      beta_2: 1.0
+      gamma: 0.3
+      eps: 0.5
+      seed: 42

@@ -1,0 +1,117 @@
+experiment:
+  backend: pytorch
+
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/splitting/0/0/train.tsv
+    validation_path: ../data/{0}/splitting/0/0/val.tsv
+    test_path: ../data/{0}/test.tsv
+  dataset: douban_0_2
+
+  top_k: 20
+  evaluation:
+    cutoffs: [10,20]
+    simple_metrics: [Recall, nDCG]
+
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+
+  models:
+
+    ItemKNN:
+      meta:
+        save_recs: False
+        verbose: False
+        validation_metric: Recall@20
+        hyper_max_evals: 20
+        hyper_opt_alg: tpe
+      neighbors: [uniform, 5, 1000]
+      asymmetric_alpha: [uniform, 0, 2]
+      tversky_alpha: [uniform, 0, 2]
+      tversky_beta: [uniform, 0, 2]
+      similarity: [cosine, jaccard, dot, asym, tversky]
+
+    Slim:
+      meta:
+        save_recs: False
+        verbose: False
+        validation_metric: Recall@20
+        hyper_max_evals: 20
+        hyper_opt_alg: tpe
+      alpha: [loguniform, -6.907755278, 0]
+      l1_ratio: [loguniform, -6.907755278, 0]
+      neighborhood: [uniform, 5, 1000]
+
+    external.SGFCF:
+      meta:
+        save_recs: False
+        verbose: False
+        validation_metric: Recall@20
+        hyper_max_evals: 20
+        hyper_opt_alg: tpe
+      batch_eval: 64
+      factors: [quniform, 10, 2000, 1]
+      alpha: [quniform, 0, 10, 0.1]
+      beta_1: [quniform, 0, 2.5, 0.1]
+      beta_2: [quniform, 2.5, 5.0, 0.1]
+      gamma: [quniform, 0.0, 0.1, 0.05]
+      eps: [quniform, 0.0, 0.5, 0.02]
+      seed: 42
+
+    external.GDE:
+      meta:
+        hyper_opt_alg: tpe
+        hyper_max_evals: 20
+        save_recs: False
+        verbose: False
+        validation_rate: 5
+        validation_metric: Recall@20
+      batch_size: 256
+      factors: 64
+      l_w: 0.01
+      feature_type: smoothed
+      smooth_ratio: [0.01, 0.05, 0.1, 0.2]
+      rough_ratio: 0.0
+      epochs: 500
+      lr: [loguniform, -6.907755278, 2.302585093]
+      dropout: [0.1, 0.2, 0.3, 0.4, 0.5]
+      beta: [quniform, 0.5, 5.0, 0.5]
+      loss_type: [adaptive, bpr]
+      seed: 42
+      early_stopping:
+        patience: 5
+        mode: auto
+        monitor: Recall@20
+        verbose: True
+
+    external.SVDGCN:
+      meta:
+        save_recs: False
+        verbose: False
+        validation_metric: Recall@20
+        hyper_max_evals: 20
+        hyper_opt_alg: tpe
+        validation_rate: 5
+      factors: 64
+      epochs: 500
+      batch_size: 128
+      l_w: 0.01
+      lr: [loguniform, -6.907755278, 2.302585093]
+      req_vec: [quniform, 60, 90, 1]
+      beta: [uniform, 2, 7]
+      alpha: [uniform, 2, 4]
+      coef_u: [loguniform, -2.30258509299, -0.105360516]  # 0.1 - 0.9
+      coef_i: [loguniform, -2.30258509299, -0.105360516]  # 0.1 - 0.9
+      seed: 123
+
+    external.SVDGCNS:
+      meta:
+        save_recs: False
+        verbose: False
+        validation_metric: Recall@20
+        hyper_max_evals: 20
+        hyper_opt_alg: tpe
+      req_vec: [quniform, 15, 90, 1]
+      beta: [uniform, 2.0, 6.0]
+      alpha: [uniform, 2.0, 6.0]
+      seed: 42

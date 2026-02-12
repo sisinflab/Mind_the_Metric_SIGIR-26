@@ -1,0 +1,39 @@
+experiment:
+  backend: pytorch
+  data_config:
+    strategy: fixed
+    train_path: ../data/{0}/train_svdgcn.tsv
+    test_path: ../data/{0}/test_svdgcn.tsv
+  dataset: yelp2015
+  top_k: 20
+  evaluation:
+    cutoffs: [10, 20]
+    simple_metrics: [Recall, nDCG]
+  gpu: 0
+  external_models_path: ../external/models/__init__.py
+  models:
+
+    external.SVDGCN:
+      meta:
+        verbose: False
+        save_recs: False
+      factors: 64
+      epochs: 15
+      batch_size: 256
+      l_w: 0.01
+      lr: 7.0
+      req_vec: 60
+      beta: 2.0
+      alpha: 3.0
+      coef_u: 0.5
+      coef_i: 0.7
+      seed: 123
+
+    external.SVDGCNS:
+      meta:
+        verbose: False
+        save_recs: False
+      req_vec: 20
+      beta: 4.0
+      alpha: 3.0
+      seed: 42
