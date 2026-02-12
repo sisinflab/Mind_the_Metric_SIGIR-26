@@ -10,23 +10,23 @@ Spectral graph-based collaborative filtering (CF) models have recently gained at
 
 This work presents a systematic and fully reproducible reassessment of three major families of spectral recommenders:
 
-Ecco la tabella riassuntiva dei modelli analizzati nel tuo studio di riproducibilità, divisi per famiglia come nel paper, con i relativi titoli e DOI.
+| Family | Model | Paper | DOI / Link | Code Repository |
+| :--- | :--- | :--- | :--- | :--- |
+| **Spectral Denoising** | **SVD-GCN** | SVD-GCN: A Simplified Graph Convolution Paradigm for Recommendation | [10.1145/3511808.3557252](https://doi.org/10.1145/3511808.3557252) | [GitHub](https://github.com/tanatosuu/svd_gcn) |
+| | **GDE** | Less is More: Reweighting Important Spectral Graph Features for Recommendation | [10.1145/3477495.3532046](https://doi.org/10.1145/3477495.3532046) | [GitHub](https://github.com/tanatosuu/GDE) |
+| | **SGDE** / **RSGDE** / **CSGDE** | Less is More: Removing Redundancy of Graph Convolutional Networks for Recommendation | [10.1145/3632751](https://doi.org/10.1145/3632751) | [GitHub](https://github.com/tanatosuu/GDE) |
+| | **SGFCF** | How Powerful is Graph Filtering for Recommendation | [10.1145/3637528.3671913](https://doi.org/10.1145/3637528.3671913) | [GitHub](https://github.com/tanatosuu/sgfcf) |
+| **Graph Signal Processing (GSP)** | **PGSP** | Personalized Graph Signal Processing for Collaborative Filtering | [10.1145/3543507.3583466](https://doi.org/10.1145/3543507.3583466) | [GitHub](https://github.com/jhliu0807/PGSP) |
+| | **FaGSP** | Frequency-aware Graph Signal Processing for Collaborative Filtering | [10.1145/3701716.3715485](https://doi.org/10.1145/3701716.3715485) | [GitHub](https://github.com/Yaveng/FaGSP) |
+| | **HiGSP** | Hierarchical Graph Signal Processing for Collaborative Filtering | [10.1145/3589334.3645368](https://doi.org/10.1145/3589334.3645368) | [GitHub](https://github.com/Yaveng/HiGSP) |
+| **Spectral Propagation** | **GF-CF** | How Powerful is Graph Convolution for Recommendation? | [10.1145/3459637.3482387](https://doi.org/10.1145/3459637.3482387) | [GitHub](https://github.com/yshenaw/GF_CF) |
+| | **BSPM** | Blurring-Sharpening Process Models for Collaborative Filtering | [10.1145/3539618.3591748](https://doi.org/10.1145/3539618.3591748) | [GitHub](https://github.com/jeongwhanchoi/BSPM) |
+| | **TurboCF** | Turbo-CF: Matrix Decomposition-Free Graph Filtering for Fast Recommendation | [10.1145/3626772.3657723](https://doi.org/10.1145/3626772.3657723) | [GitHub](https://github.com/jindeok/Turbo-CF) |
+| | **ChebyCF** | Graph Spectral Filtering with Chebyshev Interpolation for Recommendation | *[10.48550/arXiv.2505.00552](https://doi.org/10.48550/arXiv.2505.00552) (In press / SIGIR '25)* | [GitHub](https://github.com/chanwoo0806/ChebyCF) |
 
-| Famiglia | Modello | Titolo del Paper | DOI / Link |
-| :--- | :--- | :--- | :--- |
-| **Spectral Denoising** | **SVD-GCN** / **SVD-GCN-S** | SVD-GCN: A Simplified Graph Convolution Paradigm for Recommendation | [10.1145/3511808.3557252](https://doi.org/10.1145/3511808.3557252) |
-| | **GDE** | Less is More: Reweighting Important Spectral Graph Features for Recommendation | [10.1145/3477495.3532046](https://doi.org/10.1145/3477495.3532046) |
-| | **SGDE** / **RSGDE** / **CSGDE** | Less is More: Removing Redundancy of Graph Convolutional Networks for Recommendation | [10.1145/3632751](https://doi.org/10.1145/3632751) |
-| | **SGFCF** | How Powerful is Graph Filtering for Recommendation | [10.1145/3637528.3671913](https://doi.org/10.1145/3637528.3671913) |
-| **Graph Signal Processing (GSP)** | **PGSP** | Personalized Graph Signal Processing for Collaborative Filtering | [10.1145/3543507.3583466](https://doi.org/10.1145/3543507.3583466) |
-| | **FaGSP** | Frequency-aware Graph Signal Processing for Collaborative Filtering | [10.1145/3701716.3715485](https://doi.org/10.1145/3701716.3715485) |
-| | **HiGSP** | Hierarchical Graph Signal Processing for Collaborative Filtering | [10.1145/3589334.3645368](https://doi.org/10.1145/3589334.3645368) |
-| **Spectral Propagation** | **GF-CF** | How Powerful is Graph Convolution for Recommendation? | [10.1145/3459637.3482387](https://doi.org/10.1145/3459637.3482387) |
-| | **BSPM** | Blurring-Sharpening Process Models for Collaborative Filtering | [10.1145/3539618.3591748](https://doi.org/10.1145/3539618.3591748) |
-| | **TurboCF** | Turbo-CF: Matrix Decomposition-Free Graph Filtering for Fast Recommendation | [10.1145/3626772.3657723](https://doi.org/10.1145/3626772.3657723) |
-| | **ChebyCF** | Graph Spectral Filtering with Chebyshev Interpolation for Recommendation | *[10.48550/arXiv.2505.00552](https://doi.org/10.48550/arXiv.2505.00552) (In press / SIGIR '25)* |
+---
 
-### Our Challenges
+## Our Challenges
 
 Our work addresses four key challenges in the field:
 
@@ -40,15 +40,14 @@ Our work addresses four key challenges in the field:
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Prerequisites](#-prerequisites)
-- [Reproducing Experimental Results](#-reproducing-experimental-results)
-  - [**RQ1**: Replicability Study (Table 2)](#rq1-replicability-study-table-2)
-  - [**RQ2**: Fair Benchmarking (Table 3)](#rq2-fair-benchmarking-table-3)
-  - [**RQ3**: Robustness to Partitioning (Table 4)](#rq3-robustness-to-partitioning-table-4)
-  - [**RQ4**: Long-tail Analysis (Table 5)](#rq4-long-tail-analysis-table-5)
-- [Citation](#-citation)
+- [⚙️ Prerequisites & Installation](#%EF%B8%8F-prerequisites--installation)
+- [🚀 Reproducing Experimental Results](#-reproducing-experimental-results)
+  - [Challenge 1: Replicability Study (Table 2/3/4)](#challenge-1-replicability-study-table-234)
+  - [Challenge 2: Fair Benchmarking (Table 5)](#challenge-2-fair-benchmarking-table-5)
+  - [Challenge 3: Revisiting Robustness Claims (Figure 1)](#challenge-3-revisiting-robustness-claims-figure-1)
+  - [Challenge 4: Assessing Architectural Complexity (Table 7)](#challenge-4-assessing-architectural-complexity-table-7)
 
 ---
 
