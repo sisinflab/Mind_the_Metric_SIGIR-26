@@ -22,7 +22,7 @@ This work presents a systematic and fully reproducible reassessment of three maj
 | **Spectral Propagation** | **GF-CF** | How Powerful is Graph Convolution for Recommendation? | [10.1145/3459637.3482387](https://doi.org/10.1145/3459637.3482387) | [GitHub](https://github.com/yshenaw/GF_CF) |
 | | **BSPM** | Blurring-Sharpening Process Models for Collaborative Filtering | [10.1145/3539618.3591748](https://doi.org/10.1145/3539618.3591748) | [GitHub](https://github.com/jeongwhanchoi/BSPM) |
 | | **TurboCF** | Turbo-CF: Matrix Decomposition-Free Graph Filtering for Fast Recommendation | [10.1145/3626772.3657723](https://doi.org/10.1145/3626772.3657723) | [GitHub](https://github.com/jindeok/Turbo-CF) |
-| | **ChebyCF** | Graph Spectral Filtering with Chebyshev Interpolation for Recommendation | *[10.48550/arXiv.2505.00552](https://doi.org/10.48550/arXiv.2505.00552) (In press / SIGIR '25)* | [GitHub](https://github.com/chanwoo0806/ChebyCF) |
+| | **ChebyCF** | Graph Spectral Filtering with Chebyshev Interpolation for Recommendation | [10.1145/3726302.3729991](https://doi.org/10.1145/3726302.3729991) | [GitHub](https://github.com/chanwoo0806/ChebyCF) |
 
 ---
 
