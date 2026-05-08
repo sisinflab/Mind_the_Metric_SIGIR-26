@@ -202,3 +202,37 @@ To reproduce the fine-grained long-tail analysis results from Table 7, you can u
 python start_experiments.py --config beyond_accuracy_gowalla
 python start_experiments.py --config beyond_accuracy_yelp2018
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+
+## 👥 Authors
+- Domenico de Gioia (domenico.degioia@poliba.it)
+- Claudio Pomo (claudio.pomo@poliba.it)
+- Ludovico Boratto (ludovico.boratto@unica.it)
+- Tommaso Di Noia (tommaso.dinoia@poliba.it)
+
+
+---
+
+
+
+
+
+## ✒️ Citation
+
+If you find this work useful for your research, please cite our paper:
+```
+TBA
+```
