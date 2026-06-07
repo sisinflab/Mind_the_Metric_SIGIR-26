@@ -123,7 +123,7 @@ To replicate the results from the original papers (Table 2/3/4, one for each mod
 Just replace `<dataset_name>` and `<model_name>`.
 
 ```
-python start_experiments.py --config reproducibility_fpsr_<dataset_name>
+python start_experiments.py --config reproducibility_<model_name>_<dataset_name>
 ```
 
 N.B. For further details, please visit the authors' respective repositories.
